@@ -1,0 +1,340 @@
+{% load static i18n %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="description" content="Free Web tutorials"/>
+  <meta name="keywords" content="HTML,CSS,XML,JavaScript"/>
+  <meta name="author" content="John Doe"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  <meta name="theme-color" content="#ffffff"/>
+  <link rel="stylesheet" href="{% static 'fonts/Ubuntu/stylesheet.css' %}"/>
+  <link rel="stylesheet" href="{% static 'css/reset.css' %}"/>
+  <link rel="stylesheet" href="{% static 'css/libs.css' %}"/>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+  <title>Главная страница</title>
+</head>
+<body>
+<header class="header">
+  <div class="container">
+    <div class="header__flex">
+      <div class="logo"><a href=""><img src="{% static 'img/logo.svg' %}"/></a></div>
+      <div class="lang dropToggle">
+        <div class="ru item"></div>
+        <div class="drop dropToggleContent"><a class="en item" href=""></a><a class="kg item" href=""></a></div>
+      </div>
+      <nav>
+        <ul>
+          <li><a class="scrollLink" href="#anchor1">{% trans 'Главная' %}</a></li>
+          <li><a class="scrollLink" href="#anchor2">О компании</a></li>
+          <li><a class="scrollLink" href="#anchor3">Услуги</a></li>
+          <li><a class="scrollLink" href="#anchor4">Офисы</a></li>
+          <li><a class="scrollLink" href="#anchor5">Контакты</a></li>
+        </ul>
+      </nav>
+      <div class="shop-links">
+        {% if main_page.play_market %}
+          <a class="google" href="{{ main_page.play_market }}" style="background-image: url({% static 'img/social/play_store.svg' %});"></a>
+        {% endif %}
+        {% if main_page.app_store %}
+          <a class="apple" href="{{ main_page.app_store }}" style="background-image: url({% static 'img/social/apple_store.svg' %});"></a>
+        {% endif %}
+      </div>
+      <div class="social">
+        {% if main_page.facebook %}
+          <a href="{{ main_page.facebook }}" style="background-image: url({% static 'img/social/facebook.svg' %});"></a>
+        {% endif %}
+        {% if main_page.instagram %}
+          <a href="{{ main_page.instagram }}" style="background-image: url({% static 'img/social/instagram.svg' %});"></a>
+        {% endif %}
+        {% if main_page.telegram %}
+          <a href="{{ main_page.telegram }}" style="background-image: url({% static 'img/social/telegram.svg' %});"></a>
+        {% endif %}
+        {% if main_page.whatsapp %}
+          <a href="{{ main_page.whatsapp }}" style="background-image: url({% static 'img/social/WhatsApp.svg' %});"></a>
+        {% endif %}
+      </div>
+      <a class="feedback" href="#">Обратная связь</a>
+      <div class="menu-wrapper">
+        <div class="hamburger-menu"></div>
+      </div>
+    </div>
+  </div>
+  <div class="hamburger-menu-dropdown">
+    <div class="lang"><a class="ru item active" href=""></a><a class="en item" href=""></a><a class="kg item" href=""></a></div>
+    <nav>
+      <ul>
+        <li><a class="scrollLink" href="#anchor1">Главная</a></li>
+        <li><a class="scrollLink" href="#anchor2">О компании</a></li>
+        <li><a class="scrollLink" href="#anchor3">Услуги</a></li>
+        <li><a class="scrollLink" href="#anchor4">Офисы</a></li>
+        <li><a class="scrollLink" href="#anchor5">Контакты</a></li>
+      </ul>
+    </nav>
+    <div class="shop-links">
+      {% if main_page.play_market %}
+        <a class="google" href="{{ main_page.play_market }}" style="background-image: url({% static 'img/social/play_store.svg' %});"></a>
+      {% endif %}
+      {% if main_page.app_store %}
+        <a class="apple" href="{{ main_page.app_store }}" style="background-image: url({% static 'img/social/apple_store.svg' %});"></a>
+      {% endif %}
+    </div>
+    <div class="social">
+      {% if main_page.facebook %}
+        <a href="{{ main_page.facebook }}" style="background-image: url({% static 'img/social/facebook.svg' %});"></a>
+      {% endif %}
+      {% if main_page.instagram %}
+        <a href="{{ main_page.instagram }}" style="background-image: url({% static 'img/social/instagram.svg' %});"></a>
+      {% endif %}
+      {% if main_page.telegram %}
+        <a href="{{ main_page.telegram }}" style="background-image: url({% static 'img/social/telegram.svg' %});"></a>
+      {% endif %}
+      {% if main_page.whatsapp %}
+        <a href="{{ main_page.whatsapp }}" style="background-image: url({% static 'img/social/WhatsApp.svg' %});"></a>
+      {% endif %}
+    </div>
+    <a class="feedback" href="#">Обратная связь</a>
+  </div>
+</header>
+<div class="main-section" id="anchor1">
+  <div class="container">
+    <div class="main-flex">
+      {% if main_page %}
+        <div class="main-flex_col" data-aos="fade-up" data-aos-delay="1100">
+          <h1>{{ main_page.first_title }}</h1>
+          <p>{{ main_page.first_description }}</p><a class="btn red-btn" href="#">Получить консультацию</a>
+        </div>
+      {% endif %}
+      {% if main_page.image %}
+        <div class="main-flex_col" data-aos="fade-up" data-aos-delay="1200">
+          <img src="{{ main_page.image.url }}"/>
+        </div>
+      {% endif %}
+    </div>
+    {% if main_page.features %}
+      <div class="main-card">
+        {% for feature in main_page.features.all %}
+          <div class="main-card__item" data-aos="fade-up" data-aos-delay="1500">
+            <div class="image">
+              {% if main_page.image %}
+                <img src="{{ feature.image.url }}"/>
+              {% endif %}
+            </div>
+            <h3>{{ feature.title }}</h3>
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+<div class="advantages-section">
+  <div class="container">
+    {% if main_page.second_title %}
+      <h2 data-aos="fade-up" data-aos-delay="500">{{ main_page.second_title }}</h2>
+    {% endif %}
+    {% if main_page.second_description %}
+      <h3 data-aos="fade-up" data-aos-delay="600">{{ main_page.second_description }}</h3>
+    {% endif %}
+  </div>
+    <div class="advantages-grid">
+      {% if main_page.advantages %}
+        {% for advantage in main_page.advantages.all %}
+          <div class="advantages-grid__item" data-aos="fade-up" data-aos-delay="1000">
+            <div class="image">
+              {% if advantage.image %}
+                <img src="{{ advantage.image.url }}"/>
+              {% endif %}
+            </div>
+            <h4>{{ advantage.title }}</h4>
+            <p>{{ advantage.description }}</p>
+          </div>
+        {% endfor %}
+      {% endif %}
+    </div>
+</div>
+
+<div class="company-section" id="anchor2">
+  <div class="container">
+    {% if company %}
+      <div class="company-flex">
+
+        <div class="company-flex__col" data-aos="fade-up" data-aos-delay="500">
+          <h2>{{ company.heading }}</h2>
+          <p>{{ company.text }}</p>
+          {% if company.properties %}
+            <div class="count-grid" data-aos="fade-up" data-aos-delay="700">
+              {% for property in company.properties.all %}
+
+                <div class="count-grid__item">
+                  <div class="int">{{ property.number }}</div>
+                  <div class="text">{{ property.description }}</div>
+                </div>
+
+              {% endfor %}
+            </div>
+          {% endif %}
+        </div>
+        {% if company.photo %}
+          <div class="company-flex__col" data-aos="fade-left" data-aos-delay="800"><img src="{{ company.photo.url }}"/></div>
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+<div class="services-section" id="anchor3">
+  <div class="container">
+    {% if delivery %}
+      <h2 data-aos="fade-up" data-aos-delay="500">{{ delivery.title }}</h2>
+      {% if services %}
+        <div class="services-grid">
+          {% for service in services %}
+            <div class="services-grid__item" data-aos="fade-up" data-aos-delay="800">
+              {% if service.photo %}
+                <div class="image"><img src="{{ service.photo.url }}"/></div>
+              {% endif %}
+              {% if service.title %}
+                <h3>{{ service.title }}</h3>
+              {% endif %}
+              {% if service.texts %}
+                <ul>
+                  {% for line in service.texts.all %}
+                    <li>{{ line.title }}</li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+      </div>
+    {% endif %}
+</div>
+
+<div class="office-section" id="anchor4">
+  <div class="container">
+    {% if advantages_section %}
+      <h2 data-aos="fade-up" data-aos-delay="500">{{ advantages_section.title }}</h2>
+      <div class="office-wrapper">
+        <div class="office-grid">
+          {% if advantages_section.advantages %}
+            {% for advantage in advantages_section.advantages.all %}
+              <div class="office-grid__item" data-aos="fade-up" data-aos-delay="800">
+                {% if advantage.image %}
+                  <div class="image"><img src="{{ advantage.image.url }}"/></div>
+                {% endif %}
+                <h3>{{ advantage.title }}</h3>
+                <p>{{ advantage.description }}</p>
+              </div>
+            {% endfor %}
+          {% endif %}
+        </div>
+        <div class="center" data-aos="fade-up" data-aos-delay="900"><a class="btn red-btn" href="">Получить консультацию</a></div>
+      </div>
+    {% endif %}
+  </div>
+</div>
+<footer class="footer" data-aos="fade-up" data-aos-delay="500" data-aos-easing="ease" id="anchor5">
+  <div class="container">
+    <div class="footer-flex">
+      {% if contacts %}
+        <div class="footer-flex_col_left">
+          <h2>Контакты</h2>
+          <div class="footer-flex-grid">
+            {% if contacts.email %}
+              <div class="footer-flex-grid__item">
+                <h4>Пишите нам:</h4><a href="mailto: index@office.com">{{ contacts.email }}</a>
+              </div>
+            {% endif %}
+            {% if contacts.phone_number %}
+              <div class="footer-flex-grid__item">
+                <h4>Звоните нам:</h4><a href="tel: +996 (0770) 599-599">{{ contacts.phone_number }}</a>
+              </div>
+            {% endif %}
+            {% if contacts.address %}
+              <div class="footer-flex-grid__item">
+                <h4>Адрес:</h4><a>{{ contacts.address }}</a>
+              </div>
+            {% endif %}
+          </div>
+          <div class="footer-flex-grid mt-64">
+            {% if contacts.telegram %}
+              <div class="footer-flex-grid__item">
+                <a href="{{ contacts.telegram }}">
+                  <div class="icon" style="background-image: url({% static 'img/social/telegram.svg' %});"></div>
+                  Telegram</a>
+              </div>
+            {% endif %}
+              <div class="footer-flex-grid__item">
+              {% if contacts.whatsapp %}
+                <a href="{{ contacts.whatsapp }}"><div class="icon" style="background-image: url({% static 'img/social/WhatsApp.svg' %});"></div>Whatsapp</a>
+              {% endif %}
+              </div>
+
+
+            <div class="footer-flex-grid__item"><span>Скачать приложение</span>
+              {% if contacts.play_market %}
+                <a class="google" href="{{ contacts.play_market }}" style="background-image: url({% static 'img/social/play_store.svg' %});"></a>
+              {% endif %}
+              {% if contacts.app_store %}
+                <a class="apple" href="{{ contacts.app_store }}" style="background-image: url({% static 'img/social/apple_store.svg' %});"></a>
+              {% endif %}
+            </div>
+          </div>
+          <div class="line"></div>
+          <div class="social">
+            {% if contacts.facebook %}
+              <a href="{{ contacts.facebook }}" style="background-image: url({% static 'img/social/fb-1.svg' %});"></a>
+            {% endif %}
+            {% if contacts.vk %}
+              <a href="{{ contacts.vk }}" style="background-image: url({% static 'img/social/vk-1.svg' %});"></a>
+            {% endif %}
+            {% if contacts.instagram %}
+              <a href="{{ contacts.instagram }}" style="background-image: url({% static 'img/social/it-1.svg' %});"></a>
+            {% endif %}
+          </div>
+          <div class="copyright">
+            {% if contacts.policy %}
+              <a href="{{ contacts.policy }}">Политика конфиденциальности</a>
+            {% endif %}
+            {% if contacts.personal_data %}
+              <a href="{{ contacts.personal_data }}">Передача персональных</a>
+            {% endif %}
+            {% if contacts.index %}
+              <div class="text">{{ contacts.index }}</div>
+            {% endif %}
+          </div>
+        </div>
+      {% endif %}
+      <div class="footer-flex_col_right">
+        <h2>Обратная связь</h2>
+        <form action="{% url 'post_feedback' %}" method="post">
+          {% csrf_token %}
+          <div class="form-control">
+            <input type="text" name="name" placeholder="Имя"/>
+            {#                  {{ form.name }}#}
+          </div>
+          <div class="form-control">
+            <input type="text" name="phone_number" placeholder="Телефон"/>
+            {#                  {{ form.phone_number }}#}
+          </div>
+          <div class="form-control">
+            <textarea name="comment" placeholder="Комментарий" rows="5"></textarea>
+          </div>
+          <label>
+            <input class="checkbox" name="is_confirmed" type="checkbox"/><span>Отправляя заявку, вы принимаете Соглашение об обработке персональных данных</span>
+          </label>
+          <button type="submit">Отправить</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="{% static 'js/jquery-2.2.4.js' %}"></script>
+<script src="{% static 'js/libs.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
+<script src="{% static 'js/_dropdown.js' %}"></script>
+</body>
+</html>

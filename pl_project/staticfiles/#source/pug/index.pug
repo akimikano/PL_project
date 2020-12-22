@@ -1,0 +1,130 @@
+extends base/_base
+
+block css
+
+block title
+    title="Главная страница"
+
+block content
+
+    .main-section#anchor1
+        .container
+            .main-flex
+                .main-flex_col(data-aos="fade-up" data-aos-delay="1100")
+                    h1 Оперативно доставим любую посылку по Кыргызстану
+                    p INDEX Express – одна из лидеров рынка, завоевавшая признание как среди российских, так и среди зарубежных клиентов.
+                    a(href="#" class="btn red-btn") Получить консультацию
+                .main-flex_col(data-aos="fade-up" data-aos-delay="1200")
+                    img(src="img/png/main-pic.png")
+            .main-card
+                .main-card__item(data-aos="fade-up" data-aos-delay="1300")
+                    .image
+                        img(src="img/png/tracking.png")
+                    h3 Отследить груз
+                .main-card__item(data-aos="fade-up" data-aos-delay="1400")
+                    .image
+                        img(src="img/png/scooter.png")
+                    h3 Вызвать курьера
+                .main-card__item(data-aos="fade-up" data-aos-delay="1500")
+                    .image
+                        img(src="img/png/delivery.png")
+                    h3 Рассчитать стоимость
+    .advantages-section
+        .container
+            h2(data-aos="fade-up" data-aos-delay="500") Делаем доставку посылок быстрыми, надежными и легкими
+            h3(data-aos="fade-up" data-aos-delay="600") Делаем перевозки посылок быстрыми, надежными и легкими
+            .advantages-grid
+                .advantages-grid__item(data-aos="fade-up" data-aos-delay="700")
+                    .image
+                        img(src="img/png/free-shipping.png")
+                    h4 Быстро и безопасно
+                    p Доставим ваш груз уже на следующий возможный рабочий день
+                .advantages-grid__item(data-aos="fade-up" data-aos-delay="800")
+                    .image
+                        img(src="img/png/smartphone.png")
+                    h4 «От двери до двери»
+                    p Доставим ваш груз уже на следующий возможный рабочий день
+                .advantages-grid__item(data-aos="fade-up" data-aos-delay="900")
+                    .image
+                        img(src="img/png/distance.png")
+                    h4 Отслеживание
+                    p Узнайте где сейчас находится ваш груз
+                .advantages-grid__item(data-aos="fade-up" data-aos-delay="1000")
+                    .image
+                        img(src="img/png/cargo.png")
+                    h4 Международная доставка
+                    p Доставка грузов и документов по всему миру
+    .company-section#anchor2
+        .container
+            .company-flex
+                .company-flex__col(data-aos="fade-up" data-aos-delay="500")
+                    h2 О компании
+                    p Это проект транспортной логистической компании Index, специализирующейся на грузоперевозках из Китая в Кыргызстан. На рынке Index более пяти лет. Нам доверяют крупнейшие компании Кыргызстана.
+                    p Чаще всего службы доставки транспортируют документы и небольшие грузы. Среди клиентов могут быть и частные лица, и крупные компании. Если вам необходимо срочно доставить груз, курьерская служба DHL поможет решить эту задачу.
+                    .count-grid(data-aos="fade-up" data-aos-delay="700")
+                        .count-grid__item
+                            .int 100%
+                            .text Компенсации при утери
+                        .count-grid__item
+                            .int 25 000
+                            .text Клиентов нам доверяют
+                        .count-grid__item
+                            .int 300
+                            .text Заказов в день мы выполняем
+
+                .company-flex__col(data-aos="fade-left" data-aos-delay="800")
+                    img(src="img/png/main-pic-2.png")
+    .services-section#anchor3
+        .container
+            h2(data-aos="fade-up" data-aos-delay="500") Услуги
+            .services-grid
+                .services-grid__item(data-aos="fade-up" data-aos-delay="600")
+                    .image
+                        img(src="img/png/delivery-truck.png")
+                    h3 Доставка по Кыргызстану
+                    ul
+                        li Доставка грузов
+                        li Доставка документов
+                        li По городам
+                        li Популярные направления
+                .services-grid__item(data-aos="fade-up" data-aos-delay="700")
+                    .image
+                        img(src="img/png/worldwide.png")
+                    h3 Международная доставка
+                    ul
+                        li Доставка грузов
+                        li Любая бытовая техника
+                        li По городам
+                        li Популярные направления
+                .services-grid__item(data-aos="fade-up" data-aos-delay="800")
+                    .image
+                        img(src="img/png/pickup.png")
+                    h3 Дополнительные услуги
+                    ul
+                        li Выкуп любой продукции независимо от размеров или веса
+                        li Услуга «Переезд»
+                        li По городам
+                        li Экспресс доставка
+    .office-section#anchor4
+        .container
+            h2(data-aos="fade-up" data-aos-delay="500") Выбирая нас, вы получаете
+            .office-wrapper
+                .office-grid
+                    .office-grid__item(data-aos="fade-up" data-aos-delay="600")
+                        .image
+                            img(src="img/png/cash.png")
+                        h3 Конкурентные цены на услуги
+                        p Сбережем ваш бюджет! Доставить посылку через нас намного выгоднее и удобнее, чем ехать за ней самостоятельно!
+                    .office-grid__item(data-aos="fade-up" data-aos-delay="700")
+                        .image
+                            img(src="img/png/shipping.png")
+                        h3 Бережная доставка груза
+                        p Вы можете не волноваться о том, что вашу посылку сомнут или повредят!
+                    .office-grid__item(data-aos="fade-up" data-aos-delay="800")
+                        .image
+                            img(src="img/png/scooter.png")
+                        h3 Вежливые и аккуратные курьеры
+                        p Мы работаем только со стрессоустойчивыми и гибкими людьми, готовыми подстраиваться под нужды клиента
+                .center(data-aos="fade-up" data-aos-delay="900")
+                    a(href="" class="btn red-btn") Получить консультацию
+block scripts
