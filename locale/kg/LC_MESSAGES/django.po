@@ -1,0 +1,81 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-12-22 17:52+0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: templates/landing/index.html:29 templates/landing/index.html:68
+msgid "Главная"
+msgstr ""
+
+#: templates/landing/index.html:30 templates/landing/index.html:69
+msgid "О компании"
+msgstr ""
+
+#: templates/landing/index.html:31 templates/landing/index.html:70
+msgid "Услуги"
+msgstr ""
+
+#: templates/landing/index.html:32 templates/landing/index.html:71
+msgid "Офисы"
+msgstr ""
+
+#: templates/landing/index.html:33 templates/landing/index.html:72
+#: templates/landing/index.html:244
+msgid "Контакты"
+msgstr ""
+
+#: templates/landing/index.html:58 templates/landing/index.html:97
+#: templates/landing/index.html:312
+msgid "Обратная связь"
+msgstr ""
+
+#: templates/landing/index.html:106 templates/landing/index.html:234
+msgid "Получить консультацию"
+msgstr ""
+
+#: templates/landing/index.html:248
+msgid "Пишите нам"
+msgstr ""
+
+#: templates/landing/index.html:253
+msgid "Звоните нам"
+msgstr ""
+
+#: templates/landing/index.html:258
+msgid "Адрес"
+msgstr ""
+
+#: templates/landing/index.html:277
+msgid "Скачать приложение"
+msgstr ""
+
+#: templates/landing/index.html:300
+msgid "Политика конфиденциальности"
+msgstr ""
+
+#: templates/landing/index.html:303
+msgid "Передача персональных"
+msgstr ""
+
+#: templates/landing/index.html:327
+msgid ""
+"Отправляя заявку, вы принимаете Соглашение об обработке персональных данных"
+msgstr ""
+
+#: templates/landing/index.html:329
+msgid "Отправить"
+msgstr ""
